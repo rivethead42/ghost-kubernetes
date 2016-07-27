@@ -1,1 +1,21 @@
 # Ghost prepared for Kubernetes
+
+
+Envirobnment variables
+
+
+
+```
+GHOST_URL
+PROD_FORCE_ADMIN_SSL
+MAIL_HOST
+MAIL_SSL
+MAIL_PORT
+MAIL_USERNAME
+MAIL_PASSWORD
+MAIL_FROM
+MYSQL_HOST
+MYSQL_USER
+MYSQL_PASS
+MYSQL_DB
+```
