@@ -1,0 +1,1 @@
+# Ghost prepared for Kubernetes
