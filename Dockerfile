@@ -4,3 +4,4 @@ RUN chown -R user $GHOST_SOURCE
 RUN chown -R user $GHOST_SOURCE/content
 RUN chown -R user $GHOST_CONTENT
 ADD etc/config.js "$GHOST_CONTENT/config.js"
+COPY entrypoint.sh /entrypoint.sh
