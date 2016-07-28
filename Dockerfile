@@ -1,7 +1,12 @@
 FROM ghost:0.8
 MAINTAINER Andreas Åkre Solberg <andreas@solweb.no>
 RUN chown -R user $GHOST_SOURCE
-RUN chown -R user $GHOST_SOURCE/content
+
+ADD content $GHOST_SOURCE/content
+
 RUN chown -R user $GHOST_CONTENT
-ADD etc/config.js "$GHOST_SOURCE/config.js"
+
+RUN npm install --save ghost-google-cloud-storage
+
 COPY entrypoint.sh /entrypoint.sh
+ADD etc/config.js "$GHOST_SOURCE/config.js"
