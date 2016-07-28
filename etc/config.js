@@ -43,12 +43,13 @@ config = {
         url: process.env.GHOST_URL,
         forceAdminSSL: process.env.PROD_FORCE_ADMIN_SSL,
         storage: {
-            active: 'gcloud',
-            'gcloud': {
-                projectId: process.env.GCLOUD_PROJECT,
-                key: process.env.GCLOUD_KEY, // if is in the ghost root folder just add the name of the file
-                bucket: process.env.GCLOUD_BUCKET
-            }
+          "active": "ghost-storage",
+          "ghost-storage": {
+            projectId: process.env.GCLOUD_PROJECT,
+            bucket: process.env.GCLOUD_BUCKET,
+            keyFilename: '/etc/secrets/ghost-storage-key.json',
+            gcloudPath: 'storage.googleapis.com'
+          }
         },
         mail: {
             transport: 'SMTP',
