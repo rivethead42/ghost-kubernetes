@@ -6,7 +6,7 @@ ADD content $GHOST_SOURCE/content
 
 RUN chown -R user $GHOST_CONTENT
 
-RUN npm install --save ghost-google-cloud-storage
+RUN npm install --save ghost-storage
 
 COPY entrypoint.sh /entrypoint.sh
 ADD etc/config.js "$GHOST_SOURCE/config.js"
