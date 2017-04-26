@@ -1,4 +1,4 @@
-FROM ghost:0.8
+FROM ghost:latest
 MAINTAINER Andreas Åkre Solberg <andreas@solweb.no>
 RUN chown -R user $GHOST_SOURCE
 
@@ -8,7 +8,7 @@ RUN chown -R user $GHOST_CONTENT
 
 RUN npm install --save ghost-storage
 
-RUN apt-get install pico 
-
 COPY entrypoint.sh /entrypoint.sh
-ADD etc/config.js "$GHOST_SOURCE/config.js"
+ADD etc/config.js "$GHOST_CONTENT/config.js"
+
+CMD ["npm", "start", "--production"]
